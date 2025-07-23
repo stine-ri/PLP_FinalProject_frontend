@@ -4,8 +4,7 @@ import { io, Socket } from 'socket.io-client';
 import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AxiosError } from 'axios';
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://mama-shule.onrender.com/';
 
 interface User {
   _id: string;

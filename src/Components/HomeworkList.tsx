@@ -48,9 +48,9 @@ export const HomeworkList: React.FC<{ classId?: string }> = ({ classId }) => {
 
     const fetchHomework = async () => {
       try {
-        let url = 'http://localhost:5000/api/homework';
+        let url = 'https://mama-shule.onrender.com/api/homework';
         if (classId) {
-          url += `http://localhost:5000/${classId}`;
+          url += `https://mama-shule.onrender.com/${classId}`;
         }
 
         const params = new URLSearchParams();
@@ -78,7 +78,7 @@ export const HomeworkList: React.FC<{ classId?: string }> = ({ classId }) => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/homework/${id}`, {
+      const response = await fetch(`https://mama-shule.onrender.com/api/homework/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -99,7 +99,7 @@ export const HomeworkList: React.FC<{ classId?: string }> = ({ classId }) => {
     // Refetch homework
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/homework${classId ? `/${classId}` : ''}`, {
+      const response = await fetch(`https://mama-shule.onrender.com/api/homework${classId ? `/${classId}` : ''}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();

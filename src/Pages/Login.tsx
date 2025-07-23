@@ -33,7 +33,7 @@ const handleLogin = async (e: React.FormEvent) => {
 
     try {
       const response = await axios.post<AuthResponse>(
-        "http://localhost:5000/api/auth/login", 
+        "https://mama-shule.onrender.com/api/auth/login", 
         { email, password }
       );
 

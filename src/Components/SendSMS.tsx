@@ -38,7 +38,7 @@ const SendSMS: React.FC<SendSMSProps> = ({  teacherId }) => {
     const fetchStudents = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/teachers/${teacherId}/students`,
+          `https://mama-shule.onrender.com/api/teachers/${teacherId}/students`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -72,7 +72,7 @@ const SendSMS: React.FC<SendSMSProps> = ({  teacherId }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/sms/send",
+        "https://mama-shule.onrender.com/api/sms/send",
         { to: phoneNumber, message: smsContent },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -95,7 +95,7 @@ const SendSMS: React.FC<SendSMSProps> = ({  teacherId }) => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/performance/latest/${selectedStudent}`,
+        `https://mama-shule.onrender.com/api/performance/latest/${selectedStudent}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

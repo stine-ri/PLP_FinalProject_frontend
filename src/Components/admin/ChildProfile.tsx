@@ -45,7 +45,7 @@ export const AdminChildProfile: React.FC<AdminChildProfileProps> = ({
         query.append(key, String(value));
       });
 
-      const response = await axios.get(`http://localhost:5000/api/children?${query.toString()}`, {
+      const response = await axios.get(`https://mama-shule.onrender.com/api/children?${query.toString()}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

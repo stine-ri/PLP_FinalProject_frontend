@@ -69,7 +69,7 @@ export const AdminFeeDashboard = () => {
           if (value) params.append(key, value);
         });
 
-        const response = await axios.get(`http://localhost:5000/api/fees/history?${params.toString()}`, {
+        const response = await axios.get(`https://mama-shule.onrender.com/api/fees/history?${params.toString()}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         

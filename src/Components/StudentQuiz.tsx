@@ -48,7 +48,7 @@ export default function StudentQuiz() {
 
   const fetchAttempts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/quiz/history", {
+      const res = await axios.get("https://mama-shule.onrender.com/api/quiz/history", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAttempts(res.data);
@@ -72,7 +72,7 @@ export default function StudentQuiz() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/quiz/submit",
+        "https://mama-shule.onrender.com/api/quiz/submit",
         {
           score: correct,
           total: quizBank.length,

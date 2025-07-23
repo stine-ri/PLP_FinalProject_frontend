@@ -39,7 +39,7 @@ const Register: React.FC = () => {
 useEffect(() => {
   const fetchStudents = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/students/public/list');
+      const res = await fetch('https://mama-shule.onrender.com/api/students/public/list');
       
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
@@ -119,7 +119,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       })
     };
 
-    const response = await axios.post(`http://localhost:5000/api/auth/register`, dataToSend);
+    const response = await axios.post(`https://mama-shule.onrender.com/api/auth/register`, dataToSend);
     
     // Dispatch success with the error message parameter
     dispatch(registerSuccess({

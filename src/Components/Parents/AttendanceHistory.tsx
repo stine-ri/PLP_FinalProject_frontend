@@ -19,7 +19,7 @@ export const AttendanceHistory = () => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/attendance/student/history', {
+        const response = await fetch('https://mama-shule.onrender.com/api/attendance/student/history', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

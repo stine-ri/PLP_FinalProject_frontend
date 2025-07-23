@@ -23,8 +23,8 @@ export const TeacherAttendance = () => {
     const fetchData = async () => {
       try {
         const [studentsRes, attendanceRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/students'),
-          axios.get(`http://localhost:5000/api/attendance/classId?date=${date}`)
+          axios.get('https://mama-shule.onrender.com/api/students'),
+          axios.get(`https://mama-shule.onrender.com/api/attendance/classId?date=${date}`)
         ]);
         setStudents(studentsRes.data);
         setAttendance(attendanceRes.data);
@@ -40,7 +40,7 @@ export const TeacherAttendance = () => {
 
   const handleStatusChange = async (studentId: string, newStatus: string) => {
     try {
-      await axios.post('http://localhost:5000/api/attendance', {
+      await axios.post('https://mama-shule.onrender.com/api/attendance', {
         studentId,
         date,
         status: newStatus,
@@ -51,7 +51,7 @@ export const TeacherAttendance = () => {
         }
       });
       // Refresh attendance data
-      const res = await axios.get(`http://localhost:5000/api/attendance/classId?date=${date}`);
+      const res = await axios.get(`https://mama-shule.onrender.com/api/attendance/classId?date=${date}`);
       setAttendance(res.data);
     } catch (err) {
       console.error('Error updating attendance:', err);

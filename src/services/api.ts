@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// const API_BASE_URL = 'http://localhost:5000/api';
+// const API_BASE_URL = 'https://mama-shule.onrender.com/api';
 
 export interface Student {
   _id: string;
@@ -48,19 +48,19 @@ export interface NotificationData {
 
 // Fetch all students
 export const fetchStudents = async (): Promise<Student[]> => {
-  const res = await fetch('http://localhost:5000/api/students');
+  const res = await fetch('https://mama-shule.onrender.com/api/students');
   return res.json();
 };
 
 // Fetch all assigned classes
 export const fetchAssignedClasses = async (): Promise<AssignedClass[]> => {
-  const res = await fetch('http://localhost:5000/api/classes');
+  const res = await fetch('https://mama-shule.onrender.com/api/classes');
   return res.json();
 };
 
 // Upload student results
 export const uploadResults = async (data: ResultData): Promise<void> => {
-  await fetch('http://localhost:5000/api/results', {
+  await fetch('https://mama-shule.onrender.com/api/results', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: { 'Content-Type': 'application/json' },
@@ -69,7 +69,7 @@ export const uploadResults = async (data: ResultData): Promise<void> => {
 
 // Mark attendance
 export const markAttendance = async (data: AttendanceData) => {
-  const res = await fetch('http://localhost:5000/api/attendance/mark', {
+  const res = await fetch('https://mama-shule.onrender.com/api/attendance/mark', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
@@ -83,7 +83,7 @@ export const markAttendance = async (data: AttendanceData) => {
 };
 // Assign homework
 export const assignHomework = async (data: HomeworkData): Promise<void> => {
-  await fetch('http://localhost:5000/api/homework', {
+  await fetch('https://mama-shule.onrender.com/api/homework', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: { 'Content-Type': 'application/json' },
@@ -92,7 +92,7 @@ export const assignHomework = async (data: HomeworkData): Promise<void> => {
 
 // Notify admin
 export const notifyAdmin = async (data: NotificationData): Promise<void> => {
-  await fetch('http://localhost:5000/api/notify', {
+  await fetch('https://mama-shule.onrender.com/api/notify', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: { 'Content-Type': 'application/json' },
@@ -102,7 +102,7 @@ export const notifyAdmin = async (data: NotificationData): Promise<void> => {
 
 //announcements
 export const fetchAnnouncements = async () => {
-  const response = await axios.get('http://localhost:5000/api/announcements');
+  const response = await axios.get('https://mama-shule.onrender.com/api/announcements');
   return response.data;
 };
 
@@ -111,7 +111,7 @@ export const createAnnouncement = async (announcementData: {
   content: string;
   priority: string;
 }) => {
-  const response = await axios.post('http://localhost:5000/api/announcements', announcementData, {
+  const response = await axios.post('https://mama-shule.onrender.com/api/announcements', announcementData, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
@@ -121,12 +121,12 @@ export const createAnnouncement = async (announcementData: {
 // assigned teacher
 // services/api.ts
 export const getAssignedTeacher = async () => {
-  const response = await axios.get('http://localhost:5000/api/teacher');
+  const response = await axios.get('https://mama-shule.onrender.com/api/teacher');
   return response.data;
 };
 
 export const updateAssignedTeacher = async (name: string) => {
-  const response = await axios.put('http://localhost:5000/api/teacher', { name }, {
+  const response = await axios.put('https://mama-shule.onrender.com/api/teacher', { name }, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }

@@ -23,7 +23,7 @@ export const AssignedTeacher = () => {
   useEffect(() => {
     const fetchTeacher = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/teacher', {
+        const response = await axios.get('https://mama-shule.onrender.com/api/teacher', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -49,7 +49,7 @@ export const AssignedTeacher = () => {
   const handleUpdate = async () => {
     try {
       setUpdateLoading(true);
-      const response = await axios.put('http://localhost:5000/api/teacher', { name: teacherName }, {
+      const response = await axios.put('https://mama-shule.onrender.com/api/teacher', { name: teacherName }, {
         headers: {
           Authorization: `Bearer ${token}`
         }

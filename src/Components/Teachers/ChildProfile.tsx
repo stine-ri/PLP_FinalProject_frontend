@@ -42,8 +42,8 @@ export const TeacherChildProfile: React.FC<TeacherChildProfileProps> = ({
         if (!token) throw new Error('Authentication required');
 
         const url = classId 
-          ? `http://localhost:5000/api/children?classId=${classId}`
-          : 'http://localhost:5000/api/children';
+          ? `https://mama-shule.onrender.com/api/children?classId=${classId}`
+          : 'https://mama-shule.onrender.com/api/children';
           
         const response = await axios.get(url, {
           headers: { Authorization: `Bearer ${token}` }

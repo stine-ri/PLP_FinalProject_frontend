@@ -54,7 +54,7 @@ useEffect(() => {
 
       console.log('Using parent ID:', parentId);
       
-      const response = await axios.get(`http://localhost:5000/api/children/my-children`, {
+      const response = await axios.get(`https://mama-shule.onrender.com/api/children/my-children`, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

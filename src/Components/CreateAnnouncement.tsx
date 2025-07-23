@@ -20,7 +20,7 @@ export const CreateAnnouncement = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/announcements', formData, {
+      await axios.post('https://mama-shule.onrender.com/api/announcements', formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

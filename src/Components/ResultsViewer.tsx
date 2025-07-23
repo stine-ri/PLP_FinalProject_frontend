@@ -43,9 +43,9 @@ export const ResultsViewer: React.FC<{ classId?: string }> = ({ classId }) => {
 
     const fetchResults = async () => {
       try {
-        let url = 'http://localhost:5000/api/results';
+        let url = 'https://mama-shule.onrender.com/api/results';
         if (classId) {
-          url += `http://localhost:5000/${classId}`;
+          url += `https://mama-shule.onrender.com/${classId}`;
         }
 
         const params = new URLSearchParams();
@@ -83,7 +83,7 @@ export const ResultsViewer: React.FC<{ classId?: string }> = ({ classId }) => {
   const handleUpdate = async (id: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/results/${id}`, editData, {
+      await axios.put(`https://mama-shule.onrender.com/api/results/${id}`, editData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -105,7 +105,7 @@ export const ResultsViewer: React.FC<{ classId?: string }> = ({ classId }) => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/results/${id}`, {
+      await axios.delete(`https://mama-shule.onrender.com/api/results/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setResults(results.filter(result => result._id !== id));

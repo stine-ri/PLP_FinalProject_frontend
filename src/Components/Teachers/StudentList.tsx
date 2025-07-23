@@ -54,13 +54,13 @@ const StudentsList: React.FC = () => {
 
     const fetchStudents = async () => {
       try {
-        let url = 'http://localhost:5000/api/students/';
+        let url = 'https://mama-shule.onrender.com/api/students/';
         if (role === 'teacher') {
           url += 'teacher';
         } else if (role === 'parent') {
           url += 'parent';
         } else if (role === 'admin') {
-          url = 'http://localhost:5000/api/students';
+          url = 'https://mama-shule.onrender.com/api/students';
         } else {
           throw new Error('Unauthorized access');
         }
@@ -162,7 +162,7 @@ const StudentsList: React.FC = () => {
       const formData = new FormData();
       formData.append('file', importFile);
 
-      await axios.post('http://localhost:5000/api/students/import', formData, {
+      await axios.post('https://mama-shule.onrender.com/api/students/import', formData, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -178,7 +178,7 @@ const StudentsList: React.FC = () => {
       });
 
       // Refresh student list after import
-      const response = await axios.get('http://localhost:5000/api/students', {
+      const response = await axios.get('https://mama-shule.onrender.com/api/students', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudents(response.data);

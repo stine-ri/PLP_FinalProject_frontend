@@ -65,7 +65,7 @@ export const HomeworkForm: React.FC<{
 
     const fetchClasses = async () => {
       try {
-        let url = 'http://localhost:5000/api/classes';
+        let url = 'https://mama-shule.onrender.com/api/classes';
         if (role === 'teacher') {
           const teacherId = localStorage.getItem('userId');
           url += `?teacherId=${teacherId}`;
@@ -106,7 +106,7 @@ export const HomeworkForm: React.FC<{
           uploadFormData.append('files', file);
         });
 
-        const uploadResponse = await axios.post('http://localhost:5000/api/uploads', uploadFormData, {
+        const uploadResponse = await axios.post('https://mama-shule.onrender.com/api/uploads', uploadFormData, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -123,11 +123,11 @@ export const HomeworkForm: React.FC<{
       };
 
       if (existingHomework) {
-        await axios.put(`http://localhost:5000/api/homework/${existingHomework._id}`, homeworkData, {
+        await axios.put(`https://mama-shule.onrender.com/api/homework/${existingHomework._id}`, homeworkData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post('http://localhost:5000/api/homework', homeworkData, {
+        await axios.post('https://mama-shule.onrender.com/api/homework', homeworkData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }

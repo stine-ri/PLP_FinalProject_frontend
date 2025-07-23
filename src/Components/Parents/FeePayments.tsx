@@ -37,7 +37,7 @@ export const FeePayment: React.FC = () => {
         // Get children (for parents) or all students (for admins)
         if (role === 'parent') {
        
-          const response = await fetch(`http://localhost:5000/api/children/my-children`, {
+          const response = await fetch(`https://mama-shule.onrender.com/api/children/my-children`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           const childrenData = await response.json();
@@ -49,7 +49,7 @@ export const FeePayment: React.FC = () => {
         }
 
         // Get fee history
-        const historyResponse = await fetch('http://localhost:5000/api/fees/history', {
+        const historyResponse = await fetch('https://mama-shule.onrender.com/api/fees/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const historyData = await historyResponse.json();
@@ -71,7 +71,7 @@ export const FeePayment: React.FC = () => {
       setSuccess('');
 
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/fees/pay', {
+      const response = await fetch('https://mama-shule.onrender.com/api/fees/pay', {
         method: 'POST',
         headers: { 
           'Authorization': `Bearer ${token}`,
@@ -94,7 +94,7 @@ export const FeePayment: React.FC = () => {
       setAcademicTerm('');
       
       // Refresh history
-      const historyResponse = await fetch('http://localhost:5000/api/fees/history', {
+      const historyResponse = await fetch('https://mama-shule.onrender.com/api/fees/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const historyData = await historyResponse.json();

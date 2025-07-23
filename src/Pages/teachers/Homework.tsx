@@ -15,7 +15,7 @@ export const TeacherDashboard = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/classes/teacher/${teacherId}`);
+        const response = await fetch(`https://mama-shule.onrender.com/api/classes/teacher/${teacherId}`);
         const data = await response.json();
 
         if (data?.class?._id) {

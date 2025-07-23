@@ -51,7 +51,7 @@ useEffect(() => {
       let classesRes;
 
       if (role === 'teacher') {
-        classesRes = await axios.get(`http://localhost:5000/api/classes?teacherId=${teacherId}`, {
+        classesRes = await axios.get(`https://mama-shule.onrender.com/api/classes?teacherId=${teacherId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -63,7 +63,7 @@ useEffect(() => {
           fetchStudents(firstClassId);
         }
       } else if (role === 'admin') {
-        classesRes = await axios.get('http://localhost:5000/api/classes', {
+        classesRes = await axios.get('https://mama-shule.onrender.com/api/classes', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setClasses(classesRes.data);
@@ -89,7 +89,7 @@ useEffect(() => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/subjects', {
+      const response = await axios.get('https://mama-shule.onrender.com/api/subjects', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const fetchedSubjects = response.data.subjects || [];
@@ -116,7 +116,7 @@ useEffect(() => {
   const fetchStudents = async (classId: string) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/classes/${classId}/students`, {
+      const response = await axios.get(`https://mama-shule.onrender.com/api/classes/${classId}/students`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudents(response.data);

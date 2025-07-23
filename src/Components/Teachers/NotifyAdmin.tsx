@@ -36,7 +36,7 @@ const NotifyAdmin: React.FC = () => {
       setSuccess('');
 
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/notifications/admin', formData, {
+      await axios.post('https://mama-shule.onrender.com/api/notifications/admin', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -65,7 +65,7 @@ const NotifyAdmin: React.FC = () => {
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.get('http://localhost:5000/api/notifications', {
+      const { data } = await axios.get('https://mama-shule.onrender.com/api/notifications', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setNotifications(data);
@@ -77,7 +77,7 @@ const NotifyAdmin: React.FC = () => {
   const handleMarkAsRead = async (id: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://localhost:5000/api/notifications/${id}/read`, {}, {
+      await axios.patch(`https://mama-shule.onrender.com/api/notifications/${id}/read`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setNotifications(notifications.map(n => 

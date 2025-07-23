@@ -30,7 +30,7 @@ export const AdminAttendance = () => {
       if (filter.dateFrom) params.append('dateFrom', filter.dateFrom);
       if (filter.dateTo) params.append('dateTo', filter.dateTo);
 
-      const response = await axios.get(`http://localhost:5000/api/attendance?${params.toString()}`, {
+      const response = await axios.get(`https://mama-shule.onrender.com/api/attendance?${params.toString()}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -45,7 +45,7 @@ export const AdminAttendance = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/attendance/${id}`, {
+      await axios.delete(`https://mama-shule.onrender.com/api/attendance/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

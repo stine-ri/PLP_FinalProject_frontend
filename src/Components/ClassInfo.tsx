@@ -36,7 +36,7 @@ export const ClassInfo: React.FC<{ classId?: string }> = ({ classId }) => {
 
     const fetchClassData = async () => {
       try {
-        let url = 'http://localhost:5000/api/classes';
+        let url = 'https://mama-shule.onrender.com/api/classes';
         if (classId) {
           url += `/${classId}`;
         }
@@ -77,7 +77,7 @@ export const ClassInfo: React.FC<{ classId?: string }> = ({ classId }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `http://localhost:5000/api/classes/${classData?._id}`,
+        `https://mama-shule.onrender.com/api/classes/${classData?._id}`,
         editData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -96,7 +96,7 @@ export const ClassInfo: React.FC<{ classId?: string }> = ({ classId }) => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/classes/${classData?._id}`, {
+      await axios.delete(`https://mama-shule.onrender.com/api/classes/${classData?._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setClassData(null);

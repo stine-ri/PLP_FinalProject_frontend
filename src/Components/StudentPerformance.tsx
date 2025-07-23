@@ -21,8 +21,8 @@ const StudentPerformance: React.FC<Props> = ({ studentId, isParent }) => {
   const fetchPerformance = async () => {
     try {
       const url = studentId
-        ? `http://localhost:5000/api/performance/${studentId}`
-        : "http://localhost:5000/api/performance";
+        ? `https://mama-shule.onrender.com/api/performance/${studentId}`
+        : "https://mama-shule.onrender.com/api/performance";
 
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${token}` },

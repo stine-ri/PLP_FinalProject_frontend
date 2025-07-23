@@ -30,7 +30,7 @@ export const Announcements = () => {
       const token = localStorage.getItem('token');
 
       try {
-        const response = await axios.get('http://localhost:5000/api/announcements', {
+        const response = await axios.get('https://mama-shule.onrender.com/api/announcements', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
