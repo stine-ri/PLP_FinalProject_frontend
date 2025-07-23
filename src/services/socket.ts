@@ -1,8 +1,9 @@
 import { io } from 'socket.io-client';
 
 export const socket = io('https://mama-shule.onrender.com', {
-  transports: ['websocket'],
+  transports: ['polling'], // ⬅️ Use polling first
   withCredentials: true,
+  timeout: 10000
 });
 
 socket.on('connect', () => {
