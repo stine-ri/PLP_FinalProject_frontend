@@ -46,6 +46,7 @@ useEffect(() => {
       }
       
       const data = await res.json();
+      console.log("✅ Student list:", data);
       setStudents(Array.isArray(data.data) ? data.data : []);
     } catch (err) {
       console.error('Error fetching public student list:', err);
