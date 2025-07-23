@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from '../Components/Navbar';
 
-
+import { useNavigate } from "react-router-dom";
 // Helper function for social icons
 
 type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin';
@@ -22,6 +22,7 @@ const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionsRef = useRef<HTMLElement[]>([]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     // Trigger entrance animations
     const loadTimer = setTimeout(() => setIsLoaded(true), 300);
@@ -189,7 +190,7 @@ const addToRefs = (el: HTMLElement | null) => {
               }`}>
                 <div className="flex flex-wrap gap-4 sm:gap-6">
                   <a
-                    href="/register"
+                    onClick={() => navigate('/register')}
                     className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-lg sm:text-xl shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -359,7 +360,7 @@ const addToRefs = (el: HTMLElement | null) => {
               Join thousands of schools already using Mamashule to improve parent-teacher communication.
             </p>
             <a
-              href="/register"
+              onClick={() => navigate('/register')}
               className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-8 py-4 sm:px-12 sm:py-5 md:px-16 md:py-6 rounded-xl md:rounded-2xl font-bold text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 group"
             >
               <span className="flex items-center justify-center">

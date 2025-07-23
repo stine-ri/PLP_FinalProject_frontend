@@ -343,7 +343,7 @@ import Navbar from '../Components/Navbar';
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">Ready to transform your school communication?</h2>
             <p className="text-xl text-gray-600 mb-8">Join thousands of schools already using Mamashule.</p>
             <a
-              href="/signup"
+              href="/register"
               className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-800 font-bold px-8 py-4 rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
             >
               Get Started Today
