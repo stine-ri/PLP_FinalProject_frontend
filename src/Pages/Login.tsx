@@ -11,7 +11,7 @@ type AuthResponse = {
   token: string;
   role: 'admin' | 'teacher' | 'parent';
   user: {
-    id: string;
+     _id: string;
     name: string;
     email: string;
   };
@@ -42,7 +42,7 @@ const handleLogin = async (e: React.FormEvent) => {
       // Save token and role in localStorage
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
-      localStorage.setItem("userId", user.id);
+      localStorage.setItem("userId", user._id);
       console.log("Login successful", response.data);
       dispatch(login({ token, role, user }));
 

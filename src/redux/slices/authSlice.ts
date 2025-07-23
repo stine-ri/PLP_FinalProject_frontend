@@ -3,7 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 type Role = "admin" | "teacher" | "parent" | null;
 
 interface User {
-  id: string;
+   _id: string; 
   name: string;
   email: string;
 }
