@@ -352,7 +352,7 @@ const addToRefs = (el: HTMLElement | null) => {
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
           }`}>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 bg-gradient-to-r from-white via-purple-200 to-purple-300 bg-clip-text text-transparent">
+            <h2  className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 bg-gradient-to-r from-white via-purple-200 to-purple-300 bg-clip-text text-transparent">
               Ready to Get Started?
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-8 md:mb-12 font-light">
